@@ -2,23 +2,27 @@ import sys
 import random
 import curses
 
-screen = curses.initscr()
+
+curses.initscr()
 curses.start_color()
 curses.noecho()    # don't echo the keys on the screen
 curses.cbreak()    # don't wait enter for input
 curses.curs_set(0) # don't show cursor.
 
 RED_TEXT = 1
+GREEN_TEXT = 2 
+CYAN_TEXT = 3
+MAGENTA_TEXT = 4
 curses.init_pair(RED_TEXT, curses.COLOR_RED, curses.COLOR_BLACK)
-
+curses.init_pair(GREEN_TEXT, curses.COLOR_GREEN, curses.COLOR_BLACK)
 score = 0 
-allh, allw = screen.getmaxyx()
+#allh, allw = screen.getmaxyx()
 sh = 20 
 sw = 60 
 
 snakegame = curses.newwin(5,20,1,5)
 snakegame.box()
-snakegame.addnstr(1,1, "SNAKEGAME", curses.color_pair(RED_TEXT))
+snakegame.addstr(2,3, "SNAKEGAME", curses.color_pair(GREEN_TEXT))
 
 
 windowbox = curses.newwin(sh+1, sw+1, 7, 1)
@@ -28,7 +32,7 @@ windowbox.timeout(100)
 
 scorebox = curses.newwin(5,20,1,38)
 scorebox.box()
-scorebox.addnstr(1,1, "Score: " + str(score), curses.color_pair(RED_TEXT))
+scorebox.addstr(2,3, "Score: " + str(score), curses.color_pair(RED_TEXT))
 
 snk_x = sw/4
 snk_y = sh/2
@@ -78,7 +82,7 @@ while True:
             food = nf if nf not in snake else None
         windowbox.addch(food[0], food[1], curses.ACS_PI)
         score +=1
-        scorebox.addnstr(1,1, "Score: " + str(score), curses.color_pair(RED_TEXT))
+        scorebox.addstr(2,3, "Score: " + str(score), curses.color_pair(RED_TEXT))
 
     else:
         tail = snake.pop()
