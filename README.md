@@ -19,7 +19,7 @@ Download and install package from [python.org](https://www.python.org/downloads/
 #### Run the snake.py file
 Go to the location folder and run the snake.py file.
  ```
- python snake
+ python snake.py
  ````
 #### Let's play
 This should appear in your command line.
