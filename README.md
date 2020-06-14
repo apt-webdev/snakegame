@@ -2,6 +2,7 @@
 
 A basic retro game inspired by [engineer-man](https://github.com/engineer-man) series in youtube. Go check the original code [here](https://github.com/engineer-man/youtube/tree/master/015).
 
+In the samples folder are simple examples that helped me undertanding the curses library.
 ## Lest's start 
 
 #### Install puthon 3
