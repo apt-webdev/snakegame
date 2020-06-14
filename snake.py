@@ -1,6 +1,5 @@
 import random
 import curses
-from threading import Timer
 
 curses.initscr()
 curses.start_color()
